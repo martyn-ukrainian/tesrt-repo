@@ -14,7 +14,22 @@
       color: #222;
     }
     h1 { font-size: 2rem; }
-    .cat { display: block; margin: 2rem auto; max-width: 100%; border-radius: 12px; }
+    .cat {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      border-radius: 12px;
+      animation: dance 0.8s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+    @keyframes dance {
+      0%   { transform: rotate(-8deg) translateY(0)     scale(1); }
+      25%  { transform: rotate(0deg)  translateY(-18px) scale(1.04, 0.96); }
+      50%  { transform: rotate(8deg)  translateY(0)     scale(1); }
+      75%  { transform: rotate(0deg)  translateY(-18px) scale(0.96, 1.04); }
+      100% { transform: rotate(-8deg) translateY(0)     scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) { .cat { animation: none; } }
   </style>
 </head>
 <body>
